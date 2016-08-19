@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cob</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="js/cob.js"></script>
+    
+    
+    <!--Header de la page -->
+    <!--Pour info : titre et l'id de la conversation -->
+    
+    <header>
+        
+        <h2 align="center">- Démonstrateur COB -</h2>
+
+        <table align="center">
+            <tr>
+                <th>conversationId:</th>
+                <td id="convId"></td>
+            </tr>
+        </table>
+        
+    </header>
+    
+    
+    <!--chat-->
+    <section class="module-chat">
+        <div class="top-bar">
+            
+            <div class="left">
+              <h1>Chat with COB</h1>
+            </div>
+    
+        </div>
+    
+        <ol id="chatlog" class="speech"></ol>
+        
+        <div class="send-bar" align="center">
+            <form>
+                <input type="text" id="input" placeholder="Message..." required>
+                <button type="button" name="clickButton" id="sendAndGet"><a>Send</a></button>
+            </form>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <p></p>        
+    </footer>
+
+
+</body>
+
+</html>
+
+    
