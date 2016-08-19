@@ -105,6 +105,8 @@
                         // $.cookie("watermark", obj.watermark, {
                         //     expires: date
                         // }); 
+                        
+                        // talkWithBot.textToSpeech(txt);
                     }
                     
                     // if(firstStep == false){
@@ -161,6 +163,12 @@
                 }
             });
         },
+        
+        //tts google
+        // textToSpeech: function(txt){
+        //     var url = "https://translate.google.fr/translate_tts?ie=UTF-8&q=" + txt + "&tl=fr";
+        //     $('audio').attr('src', url).get(0).play();
+        // },
         
         // initiation --> id de conversation
         init: function () {
@@ -230,7 +238,7 @@ $(document).ready(function (){
                 setTimeout(function(){
                 console.log('SetTimeout2');
                     talkWithBot.getMessage( talkWithBot.convId );
-                }, 4000);
+                }, 5000);
             }
             
        }else{
