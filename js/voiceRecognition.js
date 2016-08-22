@@ -62,7 +62,7 @@ function textToSpeech(text, filename, accessToken, callback) {
     }
   }, function(err, resp, body) {
     if(err) return callback(err);
-    fs.writeFile(filename, body, 'binary', function (err) {
+    fs.writeFile('../data/' + filename, body, 'binary', function (err) {
       if (err) return callback(err);
       callback(null);
     });
