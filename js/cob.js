@@ -57,7 +57,7 @@
                     }),
                     success: function (obj) {
                         // alert("talkWithBot: Message envoyé！");
-                        $('#input').val("");
+                        $('#input').val("Réception...");
                     }
                 });
             }
@@ -82,17 +82,15 @@
                 success: function (obj) {
                     // textarea + resultats
                     
-                    console.log("GET !!!!");
-                    
                     if(talkWithBot.watermark % 2 != 0){
-                        console.log(obj);
 
                         /**************************************/
                         var txt = obj.messages[talkWithBot.watermark].text;
                         
                         document.getElementById("chatlog").innerHTML = (document.getElementById("chatlog").innerHTML + "<hr/><li class=\"other\"><div class=\"avatar\"><img src=\"img/robot.png\" /></div><div class=\"messages\"><p>" +
                             txt + "</p></div></li>");
-                            
+                        
+                        $('#input').val("");
                         /*************************************/
                         
                         // $("#textarea").val(txt);
@@ -159,7 +157,7 @@
                 //         expires: date
                 //     });
                 
-                            console.log(talkWithBot.watermark);
+
                 }
             });
         },
@@ -221,22 +219,13 @@ $(document).ready(function (){
        
        if(nextStep == true){
             
-            console.log("Reponse de cob");
-           
-            // talkWithBot.getMessage( talkWithBot.convId );
-            
-            
-            
             // Il faut gerer le temps de rep des serveurs avec les setTimeout();
             setTimeout(function(){
-                console.log('SetTimeout');
                  talkWithBot.getMessage( talkWithBot.convId );
             }, 1000);
             
             if(talkWithBot.watermark % 2 == 0 || !talkWithBot.watermark){
-                console.log("Second");
                 setTimeout(function(){
-                console.log('SetTimeout2');
                     talkWithBot.getMessage( talkWithBot.convId );
                 }, 5000);
             }
@@ -244,9 +233,5 @@ $(document).ready(function (){
        }else{
             alert("Champ vide...");
        }
-       
-       console.log('je rentre');
-    //   firstStep = false;
-       console.log(talkWithBot.watermark);
     });
 });

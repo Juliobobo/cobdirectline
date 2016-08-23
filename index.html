@@ -12,10 +12,11 @@
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="js/cob.js"></script>
+    <script src="js/tts.js"></script>
+    <script src="js/stt.js"></script>
     
     <!--Header de la page -->
     <!--Pour info : titre et l'id de la conversation -->
-    
     <header>
         
         <h2 align="center">- Démonstrateur COB -</h2>
@@ -37,7 +38,10 @@
             <div class="left">
               <h1>Chat with COB</h1>
             </div>
-    
+            
+            <div class="right">
+                <a href="#" id="start_button" onclick="startDictation(event)">Je parle !</a>
+            </div>
         </div>
     
         <ol id="chatlog" class="speech">
@@ -45,7 +49,7 @@
         </ol>
         
         <div class="send-bar" align="center">
-            <form>
+            <form id="form">
                 <input type="text" id="input" placeholder="Message..." required>
                 <button type="button" name="clickButton" id="sendAndGet"><a>Send</a></button>
             </form>
@@ -57,7 +61,69 @@
         <p>© 2016 - CGI. Tous droits réservés <br /><a>designed by Julien BONNARDEL</a></p>        
     </footer>
 
+ 
+<div id="results">
+    <p>Debug</p>
+    <span id="final_span" class="final"></span>
+    <span id="interim_span" class="interim"></span>
+</div>
 
+<br />
+
+<button type="button" id="demo_1" >Speak</button>
+<!--<button type="button" id="demo_4" >Voices</button>-->
+
+<select></select>
+
+ 
+<!-- HTML5 parole Recognition API -->
+<script>
+var synth = window.speechSynthesis;
+
+var voiceSelect = document.querySelector('select');
+
+var voices = [];
+
+function populateVoiceList() {
+  voices = synth.getVoices();
+
+  for(var i = 0; i < voices.length ; i++) {
+    var option = document.createElement('option');
+    option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+    
+    if(voices[i].default) {
+      option.textContent += ' -- DEFAULT';
+    }
+
+    option.setAttribute('data-lang', voices[i].lang);
+    option.setAttribute('data-name', voices[i].name);
+    voiceSelect.appendChild(option);
+  }
+}
+
+populateVoiceList();
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = populateVoiceList;
+}
+
+$("#demo_1").on('click', function(event) {
+  event.preventDefault();
+  var utterThis = new SpeechSynthesisUtterance('Je suis en panne');
+  var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+  for(var i = 0; i < voices.length ; i++) {
+    if(voices[i].name === selectedOption) {
+      utterThis.voice = voices[i];
+    }
+  }
+  
+  utterThis.pitch = 1;
+  utterThis.rate = 1;
+  synth.speak(utterThis);
+  console.log(utterThis);
+});
+    
+</script>
 </body>
 
 </html>

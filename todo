@@ -1,1 +1,7 @@
+//Chose à modifier
+-> IHM
 Forcer le scrollbar en bottom
+
+-> JS
+Il y a un temps d'attente entre le POST et GET. Il faut trouver une solution pour 
+optimiser cet interval de temps.

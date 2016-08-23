@@ -1,3 +1,7 @@
+/**************************************************/
+/** Voice recognition API bing speech microsoft **/
+/**      Actuellement Hors service             **/
+/***********************************************/
 var fs = require('fs');
 var request = require('request');
 var util = require('util');
@@ -8,19 +12,19 @@ var client_secret = '98dafb433df6484c9272fc94fdd0dac4';
 var str = 'Bonjour, je suis en panne';
 
 /****************
- * Zone de test *
- ****************/
- getAccessToken(client_id, client_secret, function(err, accessToken) {
+* Zone de test *
+****************/
+getAccessToken(client_id, client_secret, function(err, accessToken) {
   if(err) return console.log(err);
   console.log('Got access token: ' + accessToken);
    
-   textToSpeech(str, 'test.wav', accessToken, function(err) {
+  textToSpeech(str, 'test.wav', accessToken, function(err) {
     if(err) return console.log(err);
     console.log('Wrote out: ' + 'test.wav');
     });
 });
  
- /***************************/
+/***************************/
 
 // Pour prendre un token
 function getAccessToken(client_id, client_secret, callback) {

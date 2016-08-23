@@ -10,12 +10,24 @@
   position: relative;
   overflow: hidden;
 }
-.top-bar h1 {
+.top-bar h1{
   display: inline;
   font-size: 1.1rem;
 }
 .top-bar .left {
   float: left;
+}
+.top-bar .right {
+  float: right;
+}
+.right a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+.right a:hover{
+  color: #000000;
 }
 .top-bar > * {
   position: relative;
@@ -38,7 +50,7 @@
   margin: 20px 0;
   padding: 0 0 50px 0;
   height: 450px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .speech li {
   padding: 0.5rem;
@@ -175,4 +187,9 @@ footer {
 
 footer a {
   color: #e31937;
+}
+
+
+#results p{
+  text-decoration: underline;
 }
