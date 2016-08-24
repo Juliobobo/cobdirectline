@@ -91,6 +91,8 @@
                             txt + "</p></div></li>");
                         
                         $('#input').val("");
+                        
+                        stt(txt);
                         /*************************************/
                         
                         // $("#textarea").val(txt);
@@ -235,3 +237,7 @@ $(document).ready(function (){
        }
     });
 });
+
+
+
+

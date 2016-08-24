@@ -1,12 +1,16 @@
-// var synth = window.speechSynthesis;
+// Rq : décommenter toutes les lignes si on veut utiliser autres chose que le fr
+
+
+var synth = window.speechSynthesis;
 
 // var voiceSelect = document.querySelector('select');
 
-// var voices = [];
+var voices = [];
 
-// function populateVoiceList() {
-//   voices = synth.getVoices();
-
+function populateVoiceList() {
+  voices = synth.getVoices();
+  
+//--- Si on veut selectionner un langage (à decommenter)
 //   for(var i = 0; i < voices.length ; i++) {
 //     var option = document.createElement('option');
 //     option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
@@ -19,26 +23,33 @@
 //     option.setAttribute('data-name', voices[i].name);
 //     voiceSelect.appendChild(option);
 //   }
-// }
+}
 
-// populateVoiceList();
 
-// if (speechSynthesis.onvoiceschanged !== undefined) {
-//   speechSynthesis.onvoiceschanged = populateVoiceList;
-// }
 
-// $("#sendAndGet").on('click', function(event) {
-  
-//   event.preventDefault();
-//   var utterThis = new SpeechSynthesisUtterance(document.getElementById("chatlog").innerHTML);
-//   var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-//   for(var i = 0; i < voices.length ; i++) {
-//     if(voices[i].name === selectedOption) {
-//       utterThis.voice = voices[i];
-//     }
-//   }
-//   utterThis.pitch = 1;
-//   utterThis.rate = 1;
-//   synth.speak(utterThis);
+var stt = function(txt){
+    
+    //Je récupère les voix disponible
+    populateVoiceList();
+    
+    var utterThis = new SpeechSynthesisUtterance(txt);
 
-// });
+    //   var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+    //   for(var i = 0; i < voices.length ; i++) {
+    //     if(voices[i].name === selectedOption) {
+    //       utterThis.voice = voices[i];
+    //     }
+    //   }
+    
+      utterThis.voice = voices[7];
+      var param = utterThis.voice;
+      param.default = false;
+      param.lang = 'fr-FR';
+      param.localService = false;
+      param.name = "Google français";
+      param.voiceURI = "Google français";
+      utterThis.pitch = 1;
+      utterThis.rate = 1;
+      synth.speak(utterThis);
+
+}
