@@ -4,7 +4,7 @@
         // Plase set your secretKey
         //compte perso
         // directLineSecret: "rk_GSayRQp0.cwA.xKE.1fGigxiZxDjbleuxgGXxxoxpvD9_79zabyXQNoLE33o",
-        //compte cgi
+        //compte cgi lucia
         directLineSecret : "vvI0ulcpnxc.cwA.xmc.BwQqqFGmupXQIJIXgwSbZ2qh8ti7ej9pfV9lsAgeFno",
         convId: null,
         watermark: null,
