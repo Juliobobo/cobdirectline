@@ -5,7 +5,9 @@
         //compte perso
         // directLineSecret: "rk_GSayRQp0.cwA.xKE.1fGigxiZxDjbleuxgGXxxoxpvD9_79zabyXQNoLE33o",
         //compte cgi lucia
-        directLineSecret : "vvI0ulcpnxc.cwA.xmc.BwQqqFGmupXQIJIXgwSbZ2qh8ti7ej9pfV9lsAgeFno",
+        // directLineSecret : "vvI0ulcpnxc.cwA.xmc.BwQqqFGmupXQIJIXgwSbZ2qh8ti7ej9pfV9lsAgeFno",
+        //compte cgi lucia_test
+        directLineSecret : "rnOYAni9gfM.cwA.GVc.KKIneGTaKOmR9LVVpj1wXAQw4Arti6RdHi5djGJZTy8",
         convId: null,
         watermark: null,
         nextStep: null,
