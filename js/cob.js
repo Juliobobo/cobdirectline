@@ -3,9 +3,9 @@
         
         // Plase set your secretKey
         //compte perso
-        directLineSecret: "rk_GSayRQp0.cwA.xKE.1fGigxiZxDjbleuxgGXxxoxpvD9_79zabyXQNoLE33o",
+        // directLineSecret: "rk_GSayRQp0.cwA.xKE.1fGigxiZxDjbleuxgGXxxoxpvD9_79zabyXQNoLE33o",
         //compte cgi
-        // directLineSecret : "vvI0ulcpnxc.cwA.xmc.BwQqqFGmupXQIJIXgwSbZ2qh8ti7ej9pfV9lsAgeFno",
+        directLineSecret : "vvI0ulcpnxc.cwA.xmc.BwQqqFGmupXQIJIXgwSbZ2qh8ti7ej9pfV9lsAgeFno",
         convId: null,
         watermark: null,
         nextStep: null,
@@ -95,7 +95,7 @@
                         
                         $('#input').val("");
                         
-                        stt(txt);
+                        tts(txt);
                         /*************************************/
                         
                         // $("#textarea").val(txt);
@@ -109,69 +109,10 @@
                         //     expires: date
                         // }); 
                         
-                        // talkWithBot.textToSpeech(txt);
                     }
-                    
-                    // if(firstStep == false){
-
-                    //   console.log(obj);
-
-                    //     /**************************************/
-                    //     var txt = obj;
-                        
-                    //     document.getElementById("chatlog").innerHTML = ("<hr/><li class=\"other\"><div class=\"avatar\"><img src=\"img/robot.png\" /></div><div class=\"messages\"><p>" +
-                    //         JSON.stringify(txt) + "</p></div></li>" + document.getElementById("chatlog").innerHTML);
-                            
-                    //     /*************************************/
-                        
-                    //     // $("#textarea").val(txt);
-                        
-                    //     // watermark maj
-                    //     talkWithBot.watermark = obj.watermark;
-                    //     //save dans le cookie 30 min
-                    //     // var date = new Date();
-                    //     // date.setTime(date.getTime() + (30 * 60 * 1000));
-                    //     // $.cookie("watermark", obj.watermark, {
-                    //     //     expires: date
-                    //     // }); 
-                    // }
-                    
-                    
-                    // console.log(obj);
-                    
-                    
-                    
-                    
-                    
-                    /**************************************/
-                    // var txt = obj;
-                    
-                    // document.getElementById("chatlog").innerHTML = ("<hr/><li class=\"other\"><div class=\"avatar\"><img src=\"img/robot.png\" /></div><div class=\"messages\"><p>" +
-                    //     JSON.stringify(txt) + "</p></div></li>" + document.getElementById("chatlog").innerHTML);
-                        
-                    /*************************************/
-                    
-                    // $("#textarea").val(txt);
-                    
-                    // watermark maj
-                    talkWithBot.watermark = obj.watermark;
-                    //save dans le cookie 30 min
-                //   var date = new Date();
-                //     date.setTime(date.getTime() + (30 * 60 * 1000));
-                //     $.cookie("watermark", obj.watermark, {
-                //         expires: date
-                //     });
-                
-
                 }
             });
         },
-        
-        //tts google
-        // textToSpeech: function(txt){
-        //     var url = "https://translate.google.fr/translate_tts?ie=UTF-8&q=" + txt + "&tl=fr";
-        //     $('audio').attr('src', url).get(0).play();
-        // },
         
         // initiation --> id de conversation
         init: function () {
@@ -238,6 +179,7 @@ $(document).ready(function (){
        }else{
             alert("Champ vide...");
        }
+       
     });
 });
 
