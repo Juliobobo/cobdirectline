@@ -27,7 +27,7 @@ function populateVoiceList() {
 
 
 
-var stt = function(txt){
+var tts = function(txt){
     
     //Je récupère les voix disponible
     populateVoiceList();

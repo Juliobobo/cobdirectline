@@ -103,7 +103,7 @@
                         // $("#textarea").val(txt);
                         
                         // watermark maj
-                        talkWithBot.watermark = obj.watermark;
+                        // talkWithBot.watermark = obj.watermark;
                         //save dans le cookie 30 min
                         // var date = new Date();
                         // date.setTime(date.getTime() + (30 * 60 * 1000));
@@ -112,6 +112,8 @@
                         // }); 
                         
                     }
+                    
+                    talkWithBot.watermark = obj.watermark;
                 }
             });
         },
