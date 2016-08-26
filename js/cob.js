@@ -12,6 +12,7 @@
         watermark: null,
         nextStep: null,
         firstStep: null,
+        watermarkCheck: null,
         
         //Creation ID de conversation
         makeConvId: function () {
@@ -86,11 +87,14 @@
                 url: url,
                 success: function (obj) {
                     // textarea + resultats
-                    
-                    if(talkWithBot.watermark % 2 != 0){
+
+                    talkWithBot.watermark = obj.watermark;
+
+                    if(talkWithBot.watermark % 2 == 0 && talkWithBot.watermark != watermarkCheck){
 
                         /**************************************/
-                        var txt = obj.messages[talkWithBot.watermark].text;
+
+                        var txt = obj.messages[talkWithBot.watermark-1].text;
                         
                         document.getElementById("chatlog").innerHTML = (document.getElementById("chatlog").innerHTML + "<hr/><li class=\"other\"><div class=\"avatar\"><img src=\"img/robot.png\" /></div><div class=\"messages\"><p>" +
                             txt + "</p></div></li>");
@@ -111,9 +115,9 @@
                         //     expires: date
                         // }); 
                         
+                    }else{
+                        talkWithBot.getMessage( talkWithBot.convId );
                     }
-                    
-                    talkWithBot.watermark = obj.watermark;
                 }
             });
         },
@@ -166,20 +170,10 @@ $(document).ready(function (){
     $('#sendAndGet').click(function (){
        
        talkWithBot.sendMessage( talkWithBot.convId, $('#input').val() );
+       watermarkCheck = talkWithBot.watermark;
        
        if(nextStep == true){
-            
-            // Il faut gerer le temps de rep des serveurs avec les setTimeout();
-            setTimeout(function(){
-                 talkWithBot.getMessage( talkWithBot.convId );
-            }, 1000);
-            
-            if(talkWithBot.watermark % 2 == 0 || !talkWithBot.watermark){
-                setTimeout(function(){
-                    talkWithBot.getMessage( talkWithBot.convId );
-                }, 5000);
-            }
-            
+                talkWithBot.getMessage( talkWithBot.convId );
        }else{
             alert("Champ vide...");
        }
