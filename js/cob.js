@@ -168,7 +168,7 @@ $(function () {
 //Fonction qui send et get
 $(document).ready(function (){
     $('#sendAndGet').click(function (){
-       
+
        talkWithBot.sendMessage( talkWithBot.convId, $('#input').val() );
        watermarkCheck = talkWithBot.watermark;
        

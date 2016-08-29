@@ -13,3 +13,9 @@ Transferer luis, bot cgi
 
 //Phrase
 je voudrais faire un virement de 10€ à mathias demain
+
+//Principe
+chacun sont tour on parle. Je ne vérifie absolument pas le from.
+Donc si un des 2 interlocuteurs envoie 2 messages --> BUG
+Point à améliorer dans cette IHM
+--> Ceci n'est juste un démonstrateur rapide
