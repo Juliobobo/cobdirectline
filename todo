@@ -1,18 +1,13 @@
+// En plus
+Il y a stt.js et tts.js qui gère la recconnaissance vocale.
+Utilisation de l'api html5 voice recognition
+
+--> Au moment ou j'ai fait cela (fin août 2016) les services BING speech de microsoft étaient désactivés. Donc à terminer.
+
 //Chose à modifier
 -> IHM
 Forcer le scrollbar en bottom
 
--> JS
-Il y a un temps d'attente entre le POST et GET. Il faut trouver une solution pour 
-optimiser cet interval de temps.
-
-
-//donner source sur leur git
-Transferer luis, bot cgi
-
-
-//Phrase
-je voudrais faire un virement de 10€ à mathias demain
 
 //Principe
 chacun sont tour on parle. Je ne vérifie absolument pas le from.
